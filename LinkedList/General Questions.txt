@@ -1,0 +1,12 @@
+1. When would a linked list be a better choice than a dynamic array?
+2. When would a dynamic array be a better choice than a linked list?
+
+I am answering these two questions combined. By definiton, a dynamic array is an array that is able to 
+resize itself based on the number of content it has even though, it may be initialized much larger than
+the actual number of content in the array. However, this array cannot have number of content that is over
+the size it is initialized to be. An array is fast in calling the element by index. We just need to input the index,
+then we can get the element. The weakness of this data strcuture is that for insertion and delete, we need to 
+find a way to store the existing data and convert them to a new array. That is when linked list could become
+handy. Although searching may be more difficult, the insertion and deletion is very fast for any element. And 
+the problem of this data strcuture is searching. Therefore, if one would like to search more frequently by index,
+the best data strcuture to choose is an array. Other than that the best data strcuture is to use linked list. 
