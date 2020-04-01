@@ -26,8 +26,7 @@ public:
     void removeFromHead();
     void removeFromTail();
     Type *toArray();
-    bool search(const Type &d); 
-    // void deleteData(char, bool);
+    int search(const Type &d); 
 
 private:
     Node<Type> *head, *tail;

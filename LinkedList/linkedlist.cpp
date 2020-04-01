@@ -157,7 +157,7 @@ template <class Type>
 Type *LinkedList<Type>::toArray()
 {
     int i = 0;
-    static char ans[10000];
+    static Type ans[10000];
     Node<Type> *tmp = head;
     do
     {
@@ -168,44 +168,20 @@ Type *LinkedList<Type>::toArray()
     return ans;
 }
 
-//Search for the first instance of element in the list
+//Search for thefirst instance of element in the list
 template <class Type>
-bool LinkedList<Type>::search(const Type &d)
+int LinkedList<Type>::search(const Type &d)
 {
-    int counter = 0;
+    int count = 0, ans = 0;
     Node<Type> *tmp = head;
-    while (tmp->next != head)
+    do
     {
         if (tmp->data == d)
-            counter++;
+        {
+            return count;
+        }
         tmp = tmp->next;
-    }
-
-    if (counter > 0)
-    {
-        cout << "'" << search << "' was found " << counter << " time(s)" << endl;
-        return true;
-    }
-    else
-    {
-        cout << "'" << search << "' was not found" << endl;
-        return false;
-    }
+        count++;
+    } while (tmp != NULL);
+    return -1;
 }
-
-// void LinkedList::deleteData(char search, bool all) // If true, it will delete all nodes with the same search
-// {                                                  // If false, it will delete the first Node only
-//     Node *tmp = head;
-//     while (tmp)
-//     {
-//         if (tmp->data == search)
-//         {
-//             cout << "Deleting " << search << endl;
-//             tmp->prev->next = tmp->next;
-//             tmp->next->prev = tmp->prev;
-//             if (false)
-//                 return;
-//         }
-//         tmp = tmp->next;
-//     }
-// }
